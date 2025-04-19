@@ -1,0 +1,68 @@
+.content{
+    height: 500px;
+}
+.content-left{
+    float: left;
+    width: 70%;
+    height: 500px;
+}
+.content-right h1{
+    position: relative;
+    left: 150px;
+    top: 40px;
+    font-style: italic;
+}
+.content-left #anh{
+    height: 300px;
+    margin-left: 50px;
+    margin-top: 40px;
+
+}
+.content p{
+    height: 500px;
+    width: 500px;
+    position: relative;
+    left: 200px;
+    bottom: 280px;
+    font-size: 20px;
+    font-style: italic;
+}
+.content-right{
+    float: left;
+    width: 30%;
+    height: 500px;
+    border-left: 1px solid gray;
+    padding: 10px;
+}
+.content-right input{
+    position: relative;
+    height: 40px;
+    border-radius: 20px;
+    width: 300px;
+    margin: 10px;
+    top: 50px;
+    left: 70px;
+    padding-left: 15px;
+}
+.content-right button{
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    position: relative;
+    top: 60px;
+    left: 120px;
+}
+.content-right button:hover{
+    background-color: aqua;
+    color: brown;
+}
+.content-right a{
+    position: relative;
+    top: 100px;
+    right: 10px;
+}
+.footer{
+    clear: both;
+    height: 80px;
+    text-align: left;
+}

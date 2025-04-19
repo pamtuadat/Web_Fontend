@@ -1,0 +1,120 @@
+.carousel-item img {
+    height: 550px;
+    object-fit: cover;
+}
+.card {
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    gap: 15px;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card img:hover{
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+.type-of-chocolate li {
+    width: 200px;
+    height: 50px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 30px;
+    margin: 0 10px 0 10px;
+    text-transform: uppercase;
+    background-color: rgb(196, 195, 195);
+    font-weight: bold;
+    
+
+}
+.type-of-chocolate li a{
+    color: #654321;
+}
+.type-of-chocolate li a:hover{
+    width: 200px;
+    height: 50px;
+    background-color:#654321;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+}
+.type-of-chocolate li a:hover{
+    transition: all 0.2s ease-in-out;
+}
+.product .container .card{
+    width: 250px;
+    height: 350px;
+    align-items: center;
+    gap: 5px;
+}
+.product .card-header{
+    height: 200px;
+    width: 90%;
+    text-align: center;
+}
+.product .card-header .img-fluid{
+    width: 100vh;
+    height:20vh;
+}
+.product .card-header .img-fluid:hover{
+    transform: scale(1.1); /* Phóng to lên 10% */
+}
+.carousel-all{
+    align-items: center;
+}
+.carousel-item {
+    z-index: 1;
+}
+.carousel-item.active {
+    z-index: 10; /* Item đang hiển thị sẽ ở trên */
+}
+.carousel-inner {
+    overflow: hidden;
+}
+.carousel-item.d-flex {
+    flex-wrap: wrap; /* Ngăn các card bị chồng lên nhau */
+}
+
+.product .carousel.slide .carousel-item.d-flex .card{
+    margin-left: 40px;
+}
+.row.mt-4 .carousel.slide.text-center .carousel-item.d-flex .card{
+    margin-left: 20px;
+}
+#banner2, #banner3{
+    width: 900px;
+    height: 600px;
+}
+.conatiner .row.mt-4 .col video{
+    border-radius:10px;
+}
+.bcn .card{
+    height: 500px;
+}
+.bcn .card .card-header{
+    height: 300px;
+}
+.bcn .card .card-header img{
+    height: 100%;
+    width: 100%;
+}
+.bcn .card .card-body{
+    height: 120px;
+    width: 100%;
+}
+
+.card-title{
+    font-size: 17px;
+    width: 100%;
+    font-weight: bold;
+}
+.bcn .card .card-body .btn.btn-primary{
+    width: 200px;
+}
+.stars {
+    color: #ffa500;
+}

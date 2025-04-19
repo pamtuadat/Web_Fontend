@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="icon" type="image/png" href="../img/logo/logo.jpg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <style>
+        .icon-social{
+            position: relative;
+            left: 25%;
+        }
+        .icon-social li a{
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            margin-left: 20px;
+        }
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .separator:not(:empty)::before {
+            margin-right: 10px;
+        }
+
+        .separator:not(:empty)::after {
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="header-container"></header>
+    <section>
+        <div class="container"
+            style="margin-top: 70px;
+                    margin-bottom: 70px;
+                   width: 700px;
+                   border-radius: 20px;">
+            <div class="card p-5">
+                <div class="card-header text-center"
+                    style="border: none;
+                           background-color: white;">
+                    <h1><span style="color: darkblue; font-family: 'Segoe UI', sans-serif;">Đăng nhập</span></h1>
+                </div>
+                <div class="card-body text-center">
+                    <form class="formLogIn">
+                        <div class="input-group mt-3">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" placeholder="tài khoản" id="user" onblur="checkUserName()" required>
+                        </div>
+                        
+                        <div class="input-group mt-3">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="text" class="form-control " placeholder="Email" id="email" onblur="checkEmail()" required>
+                        </div>
+                        
+                        <div class="input-group mt-3">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" class="form-control" placeholder="Mật khẩu" id="password" onblur="checkPassword()" required>
+                        </div>
+                        
+                        <button type="button" class="btn btn-warning mt-3 mb-3 " style="width: 100%;" onclick="logIn()">Đăng nhập</button>
+                        <span style="color: orange;">Quên mật khẩu</span>
+                    </form>
+                </div>
+                <div class="card-footer text-center"
+                    style=" border: none;
+                            background: white;
+                            height: 150px;">
+                    <div class="separator">
+                        <span>Hoặc đăng nhập bằng</span>
+                    </div>
+                    <div class="row mt-3"
+                        style="position: relative;">
+                        <ul class="nav icon-social">
+                            <li class="nav-item"><a href="https://mail.google.com/mail/" class="nav-link "><i class="fab fa-google"></i> Google</a></li>
+                            <li class="nav-item"><a href="https://www.facebook.com/" class="nav-link"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        </ul>
+                    </div>
+                    <div class="row text-center mt-3">
+                        <span style="font-weight: bold;">
+                            Đã chưa có tài khoản <a href="../html/sign-up.html" style="color: orange;">Đăng ký ngay</a>.
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer-container"></footer>
+    <!-- js -->
+    <script src="../js/layout.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/log-in.js"></script>
+</body>
+</html>

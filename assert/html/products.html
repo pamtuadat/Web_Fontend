@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shocolate</title>
+    <link rel="icon" type="image/png" href="../img/logo/logo.jpg">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/style-pro-list.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/product.js"></script>
+
+</head>
+<body onload="showProductByType('all');">
+    <div id="header-container"></div>
+    <section class="row">
+        <div class="left-sidebar col-lg-2">
+            <ul class="nav d-block">
+                <label for="snapham" style="font-size: 30px;">Phân loại:</label>
+                <li class="nav-item"><button class="nav-link btn fs-5" onclick="showProductByType('dark')" id="socola-den">Socola đen</button></li>
+                <li class="nav-item"><button class="nav-link btn fs-5" onclick="showProductByType('white')" id="socola-trang">Socola trắng</button></li>
+                <li class="nav-item"><button class="nav-link btn fs-5" onclick="showProductByType('box')" id="socola-box">Socola hộp quà</button></li>
+                <li class="nav-item"><button class="nav-link btn fs-5" onclick="showProductByType('other')" id="sanpham-khac">Các loại khác</button></li>
+            </ul>
+            
+            <hr>
+            <div class="price-range">
+                <label for="price" style="font-size: 28px;">Giá:</label>
+                <div class="slider">
+                    <div class="slider-track"></div>
+                    <input type="range" min="0" max="1822" value="0" id="min-price">
+                    <input type="range" min="0" max="1822" value="1822" id="max-price">
+                </div>
+                <div class="price-values">
+                    Price: <span id="min-value"> 0 </span> VND - <span id="max-value"> 500,000 </span>VND
+                </div>
+            </div>
+            <hr>
+
+        </div>
+
+        <div class="all-products col-lg-10 p-4">
+
+            <!-- hien thi san pham theo dang luoi hay cot -->
+            <div class="d-flex justify-content-center mb-3 mt-3">
+                <button class="btn-toggle active pt" id="gridView" onclick="toggleView('grid')" >
+                    <i class="bi bi-grid-fill" style="font-size: 24px; color: black;"></i>
+                </button>
+                <button class="btn-toggle" id="listView"  onclick="toggleView('list')" >
+                    <i class="bi bi-list" style="font-size: 24px; color: gray;"></i>
+                </button>
+            </div>
+            <!-- hien thi san pham -->
+            <div class="row pr-3" id="productContainer"></div>
+        </div>
+    </section>    
+    <div id="footer-container"></div>
+    <!-- js -->
+    <script src="../js/layout.js"></script>
+    <script src="../js/product.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/log-in.js"></script>
+</body>
+</html>

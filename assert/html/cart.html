@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <link rel="icon" type="image/png" href="../img/logo/logo.jpg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <style>
+        .card{
+            width: 300px;
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body style="background: white;" onload="showCart()">
+    <header id="header-container"></header>
+
+    <section class="container py-5 cart">
+        <div class="row justify-content-center text-center" id="cart-products">
+            <h2 style="font-family: Arial, Helvetica, sans-serif;">GIỎ HÀNG CỦA BẠN</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tên sản phẩm </th>
+                        <th>Hình ảnh</th>
+                        <th>Mô tả</th>
+                        <th>Số lượng</th>
+                        <th>Giá cả</th>
+                        <th>Thành tiền</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>  
+    <!-- modal -->
+    <div class="modal" id="modalInfo">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Xóa sản phẩm khỏi giỏ hàng</h3>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="removeFromCart()" data-bs-dismiss="modal">Xác nhận</button>
+                    <button type="button" class="btn-warning btn" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script src="../js/layout.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/log-in.js"></script>
+     
+</body>
+</html>
+
