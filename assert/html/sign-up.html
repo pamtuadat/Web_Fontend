@@ -40,7 +40,12 @@
         .separator:not(:empty)::after {
             margin-left: 10px;
         }
-
+        #errUsername, #errPassword, #errAgainPass,
+        #errHT, #errDate, #errEmail, #errPhone, #errDC{
+            color: red;
+            font-size: 15px;
+            
+        }
     </style>
 </head>
 <body >
@@ -56,7 +61,7 @@
             <div class="card p-5">
                 <div class="card-header text-center"
                     style="background-color: white;">
-                    <span style="font-size: 20px;">Chào mừng bạn đến với shocolate.</span>
+                    <span style="font-size: 20px; color: gray;">Chào mừng bạn đến với shocolate.</span>
                     <h1 class="mt-2"><span style="color: darkblue; font-family: 'Segoe UI', sans-serif;">Đăng ký </span></h1>
                 </div>
                 <div class="card-body text-center">
@@ -64,53 +69,54 @@
                         <div class="input-group mt-3">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                             <input type="text" class="form-control " placeholder="Tài khoản" id="username" onblur="checkUserName()" required>
-                            <span id="errUsername"></span>
                         </div>
+                        <span id="errUsername"></span>
                         
                         <div class="input-group mt-3">
                             <span class="input-group-text"><i class="fas fa-lock"></i></span>
                             <input type="password" class="form-control " placeholder="Mật khẩu" id="password" onblur="checkPassword()" required>
-                            <span id="errPassword"></span>
                         </div>
+                        <span id="errPassword"></span>
                         
                         <div class="input-group mt-3">
                             <span class="input-group-text"><i class="fas fa-lock"></i></span>
                             <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" id="againpass" onblur="checkReqPassword()" required>
-                        <span id="errAgainPass"></span>
                         </div>
-                        
+                        <span id="errAgainPass"></span>
+
                         <div class="input-group mt-3">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                             <input type="text" class="form-control" placeholder="Họ và tên" id="txtHoTen" onblur="checkFullName()">
-                            <span id="errHT"></span>
+                            
                         </div>
-                        
+                        <span id="errHT"></span>
 
                         <div class="input-group mt-3">
                             <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-                            <input type="date" name="ngaySinh" class="form-control " id="date">
-                            <span id="errDate"></span>
+                            <input type="date" name="ngaySinh" class="form-control " id="date" onblur="checkDate()">
                         </div>
-                        
+                        <span id="errDate"></span>
 
                         <div class="input-group mt-3">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                             <input type="email" class="form-control " placeholder="Email" id="txtEmail" onblur="checkEmail()">
-                            <span id="errEmail"></span>
+                            
                         </div>
-                        
+                        <span id="errEmail"></span>
+
                         <div class="input-group mt-3">
                             <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
                             <input type="text" class="form-control  " placeholder="Số điện thoại" id="sdt" onblur="checkPhone()">
-                            <span id="errPhone"></span>
+                            
                         </div>
-                        
+                        <span id="errPhone"></span>
+
                         <div class="input-group mt-3">
                             <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                             <input type="text" class="form-control" placeholder="Địa chỉ" id="txtDC" onblur="checkAddress()">
-                            <span id="errDC"></span>
+                            
                         </div>
-                        
+                        <span id="errDC"></span>
 
                         <button type="button" class="btn btn-primary w-100 mt-3 mb-3" onclick="signUp()">Đăng Ký</button>
                         <span style="font-weight: bold; color: orange;">Quên mật khẩu. <br></span>

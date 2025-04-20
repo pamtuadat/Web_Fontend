@@ -26,7 +26,7 @@ function checkPassword(){
     }
 }
 function checkReqPassword(){
-    if(document.getElementById("password").value === document.getElementById("againpass").value){
+    if(document.getElementById("password").value === document.getElementById("againpass").value && document.getElementById("againpass").value !== ""){
         document.getElementById("errAgainPass").innerHTML = "";
         document.getElementById("againpass").style.border = "2px solid green";
         return true;
@@ -38,7 +38,7 @@ function checkReqPassword(){
 }
 
 function checkFullName(){
-    var req = /^([A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠƯỲỴÝỶỸẮẰẲẴẶẤẦẨẪẬẮẰẲẴẶÉÈẼẸẸỀỂỄỆ])[a-zàáâãèéêìíòóôõùúăđĩũơưỳỵỷỹắằẳẵặấầẩẫậéèẽẹệềểễệ]+(\s([A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠƯỲỴÝỶỸẮẰẲẴẶẤẦẨẪẬẮẰẲẴẶÉÈẼẸẸỀỂỄỆ])[a-zàáâãèéêìíòóôõùúăđĩũơưỳỵỷỹắằẳẵặấầẩẫậéèẽẹệềểễệ]+)+$/;
+    var req = /^([A-ZÀ-Ỹ])[a-zà-ỹ]+(\s([A-ZÀ-Ỹ])[a-zà-ỹ]+)+$/;
     if(req.test(document.getElementById("txtHoTen").value)){
         document.getElementById("errHT").innerHTML = "";
         document.getElementById("txtHoTen").style.border = "2px solid green";
@@ -91,13 +91,13 @@ function checkPhone(){
     }
 }
 function checkAddress(){
-    var reqDC = /^[A-Za-z0-9\s,.-]{5,}$/;
+    var reqDC = /^[A-ZÀ-Ỹa-zà-ỹ0-9\s,.-]{5,}$/;
     if(reqDC.test(document.getElementById("txtDC").value)){
         document.getElementById("txtDC").style.border ="2px solid green";
         document.getElementById("errDC").innerHTML = "";
         return true;
     }else{
-        document.getElementById("txtDC").style.border ="2px solid green";
+        document.getElementById("txtDC").style.border ="2px solid red";
         document.getElementById("errDC").innerHTML = "";
         return false;
     }
@@ -110,7 +110,7 @@ function signUp(){
         setUsers();
         reset();
     }else{
-        alert("Vui lòng kiểm tra lại.");
+        alert("Đăng ký thất bại. Vui lòng kiểm tra lại.");
       
     }
 }

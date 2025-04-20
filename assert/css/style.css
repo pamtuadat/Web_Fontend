@@ -25,6 +25,11 @@ body {
     height: 80px;
 
 }
+#navbarNav{
+    background-color: #e1ecd2;
+    width: 100vw;
+    padding: 15px;
+}
 .header .menu .nav-item .nav-link{
     color: rgb(11, 11, 11);
     margin-right: 15px;
@@ -52,7 +57,6 @@ body {
 }
 /* foooter */
 .footer{
-    height: 320px;
     max-width: 100%;;
     background-color: #91b464;
     color: black;
