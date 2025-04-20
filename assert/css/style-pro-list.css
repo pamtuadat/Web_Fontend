@@ -1,31 +1,77 @@
-.row .left-sidebar{
+
+.row .left-sidebar {
     border-right: 1px solid black;
     width: 230px;
     margin-left: 10px;
 }
-/* Mặc định: Hiển thị dạng lưới (4 sản phẩm trên 1 hàng) */
+
 #productContainer.grid-view {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Khoảng cách giữa các card */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
 }
 
 #productContainer.grid-view .product-item {
-    flex: 1 1 calc(20% - 15px); /* Chia thành 4 cột, trừ khoảng cách */
-    max-width: calc(20% - 15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
 }
 
-/* Khi chuyển sang danh sách */
 #productContainer.list-view {
     display: flex;
     flex-direction: column;
 }
 
 #productContainer.list-view .product-item {
-    width: 100%; /* Chiếm toàn bộ chiều ngang */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid #ddd;
 }
 
-/* Style nút bấm */
+#productContainer.list-view .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#productContainer.list-view .card-header {
+    flex: 0.5;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    text-align: end;
+    border: none;
+}
+
+#productContainer.list-view .card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#productContainer.list-view .card-body {
+    flex: 1;
+    padding-left: 20px;
+}
+
+#productContainer.list-view .card img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+
+
 .btn-toggle {
     border: none;
     background: none;
@@ -41,104 +87,75 @@
     color: gray;
 }
 
-/* Đảm bảo hiển thị tốt trên màn hình nhỏ */
-@media (max-width: 768px) {
-    #productContainer.grid-view .product-item {
-        flex: 1 1 calc(50% - 15px); /* Chia thành 2 cột trên màn nhỏ */
-        max-width: calc(50% - 15px);
-    }
-}
-
-@media (max-width: 480px) {
-    #productContainer.grid-view .product-item {
-        flex: 1 1 100%; /* 1 cột trên màn rất nhỏ */
-        max-width: 100%;
-    }
-}
-.btn-toggle:hover{
+.btn-toggle:hover {
     background-color: beige;
     height: 40px;
     width: 30px;
     border-radius: 10px;
-
 }
 
-#productContainer.grid-view {
+
+@media (max-width: 768px) {
+    #productContainer.grid-view {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #productContainer.grid-view {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    height: 420px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-#productContainer.grid-view .product-item {
-    width: 25%; 
+.card-header {
+    height: 320px;
+}
+.card-body{
+    height: 90px;
+    padding: 10px;
 }
 
-#productContainer.list-view {
-    display: block;
-}
-
-#productContainer.list-view .product-item {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    border-top: 1px solid #ddd; /* Thêm đường kẻ ngăn cách */
-}
-
-#productContainer.list-view .card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 80%;
-    height: auto;
-    border: none;
-    margin-bottom: 20px;
-}
-#productContainer.list-view .card-header{
-    flex: 0.5;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-    line-height: 50px;
-    background-color: white;
-    text-align: end;
-    border: none;
-}
-#productContainer.list-view .card-header img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-#productContainer.list-view .card-body {
-    flex: 1;
-    padding-left: 20px; /* Đẩy nội dung cách ảnh */
-}
-
-
-#productContainer.list-view .card img {
-    width: 150px;
-    height: auto;
-    object-fit: cover;
-}
-.card-header{
-    height: 330px;
-}
-.card-body span{
+.card-body span {
     color: #FFD700;
     margin-top: 20px;
     position: relative;
 }
 
-.card-body .btn-product{
+.card-body .btn-product {
     background: #654321;
     border-radius: 40px;
-    width: 50px;
+    width: 55px;
     color: white;
     border: none;
     position: absolute;
-    right: 15px;
-    bottom: 20px;
+    right: 10px;
+    bottom: 15px;
 }
+
+.card-title {
+    gap: 0;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.img-fluid,
+.product-item .card-header img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+
 .price-range {
-    width: 100%; 
+    width: 100%;
     font-family: sans-serif;
 }
 
@@ -183,14 +200,4 @@ input[type="range"]::-webkit-slider-thumb {
 
 .price-values {
     margin-top: 10px;
-}
-.card{
-    height: 420px;
-}
-.img-fluid{
-    width: 100%;
-    height: 300px;
-}
-.card-title{
-    width: 90%;
 }
